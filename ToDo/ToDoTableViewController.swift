@@ -14,11 +14,7 @@ class ToDoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let savedToDos = ToDo.loadToDos() {
-            toDos = savedToDos
-        } else {
-            toDos = ToDo.loadToDosSamples()
-        }
+        toDos = ToDo.loadToDos() ?? ToDo.loadToDosSamples()
     }
 
     // MARK: - Table view data source
