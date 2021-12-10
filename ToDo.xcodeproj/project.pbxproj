@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		EE9C6ABA2760C6DE00278307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C6AB92760C6DE00278307 /* AppDelegate.swift */; };
 		EE9C6ABC2760C6DE00278307 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C6ABB2760C6DE00278307 /* SceneDelegate.swift */; };
-		EE9C6ABE2760C6DE00278307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C6ABD2760C6DE00278307 /* ViewController.swift */; };
 		EE9C6AC12760C6DE00278307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9C6ABF2760C6DE00278307 /* Main.storyboard */; };
 		EE9C6AC32760C6DF00278307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE9C6AC22760C6DF00278307 /* Assets.xcassets */; };
 		EE9C6AC62760C6DF00278307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9C6AC42760C6DF00278307 /* LaunchScreen.storyboard */; };
+		EE9C6ACE2760E6DF00278307 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C6ACD2760E6DF00278307 /* ToDoTableViewController.swift */; };
+		EE9C6AD02760E70600278307 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C6ACF2760E70600278307 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE9C6AB62760C6DE00278307 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9C6AB92760C6DE00278307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE9C6ABB2760C6DE00278307 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE9C6ABD2760C6DE00278307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EE9C6AC02760C6DE00278307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE9C6AC22760C6DF00278307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE9C6AC52760C6DF00278307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE9C6AC72760C6DF00278307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE9C6ACD2760E6DF00278307 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		EE9C6ACF2760E70600278307 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				EE9C6AB92760C6DE00278307 /* AppDelegate.swift */,
 				EE9C6ABB2760C6DE00278307 /* SceneDelegate.swift */,
-				EE9C6ABD2760C6DE00278307 /* ViewController.swift */,
 				EE9C6ABF2760C6DE00278307 /* Main.storyboard */,
+				EE9C6ACF2760E70600278307 /* ToDo.swift */,
+				EE9C6ACD2760E6DF00278307 /* ToDoTableViewController.swift */,
 				EE9C6AC22760C6DF00278307 /* Assets.xcassets */,
 				EE9C6AC42760C6DF00278307 /* LaunchScreen.storyboard */,
 				EE9C6AC72760C6DF00278307 /* Info.plist */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9C6ABE2760C6DE00278307 /* ViewController.swift in Sources */,
 				EE9C6ABA2760C6DE00278307 /* AppDelegate.swift in Sources */,
+				EE9C6ACE2760E6DF00278307 /* ToDoTableViewController.swift in Sources */,
 				EE9C6ABC2760C6DE00278307 /* SceneDelegate.swift in Sources */,
+				EE9C6AD02760E70600278307 /* ToDo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
