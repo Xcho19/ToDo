@@ -23,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2V0-mR-Kc8" kind="presentation" destinationCreationSelector="editToDo:" id="jO2-yL-ccW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -242,6 +245,9 @@
             <point key="canvasLocation" x="-398" y="128"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jO2-yL-ccW"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
