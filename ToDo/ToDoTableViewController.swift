@@ -18,9 +18,6 @@ class ToDoTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
-    // MARK: - Table view data source
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDos.count
     }
@@ -63,6 +60,7 @@ class ToDoTableViewController: UITableViewController {
             }
         }
     }
+    
     @IBSegueAction func editToDo(_ coder: NSCoder, sender: Any?) -> ToDoDetailTableViewController? {
         guard let cell = sender as? UITableViewCell,
               let indexPath = tableView.indexPath(for: cell)
