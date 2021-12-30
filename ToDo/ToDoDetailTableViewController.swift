@@ -23,13 +23,21 @@ class ToDoDetailTableViewController: UITableViewController {
     @IBOutlet var dueDatePickerView: UIDatePicker!
     
     @IBOutlet var notesTextView: UITextView!
-    
     @IBOutlet var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dueDatePickerView.date = Date().addingTimeInterval(24*60*60)
+        if let todo = todo {
+            navigationItem.title = "To-Do"
+            titleTextField.text = todo.title
+            isCompleteButton.isSelected = todo.isComplete
+            dueDatePickerView.date = todo.dueDate
+            notesTextView.text = todo.notes
+        } else {
+            dueDatePickerView.date = Date().addingTimeInterval(24*60*60)
+        }
+        
         updateDueDateFormatter(date: dueDatePickerView.date)
         updateSaveButtonState()
     }
