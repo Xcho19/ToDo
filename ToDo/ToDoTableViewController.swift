@@ -34,8 +34,9 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath) as! ToDoCell
-                
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath) as? ToDoCell
+        else { fatalError() }
+        
         let toDo = toDos[indexPath.row]
         cell.titleLabel?.text = toDo.title
         cell.isCompleteButton.isSelected = toDo.isComplete
@@ -45,7 +46,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     }
     
     func checkmarkTapped(sender: ToDoCell) {
-        if let indexPath = tableView.indexPath(for: sender){
+        if let indexPath = tableView.indexPath(for: sender) {
             var todo = toDos[indexPath.row]
             todo.isComplete.toggle()
             toDos[indexPath.row] = todo
@@ -53,9 +54,10 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         }
     }
     
-    @IBAction func unwindToToDoList(segue: UIStoryboardSegue){
-        guard segue.identifier == "saveUnwind" else { return }
-        let sourceViewController = segue.source as! ToDoDetailTableViewController
+    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind",
+              let sourceViewController = segue.source as? ToDoDetailTableViewController
+        else { return }
         
         if let todo = sourceViewController.todo {
             if let indexOfExistingToDo = toDos.firstIndex(of: todo) {
