@@ -16,14 +16,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="Dgx-ga-QXA">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="Dgx-ga-QXA" customClass="ToDoCell" customModule="ToDo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dgx-ga-QXA" id="eB6-i7-8dW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-x7-ugw">
+                                            <rect key="frame" x="20" y="11" width="374" height="25"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1G-JD-NUq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="" image="circle" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="21"/>
+                                                    </state>
+                                                    <state key="selected" image="checkmark.circle.fill" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="21"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="completeButtonTapped:" destination="Dgx-ga-QXA" eventType="touchUpInside" id="Zdv-e7-GLS"/>
+                                                        <action selector="isCompletButtonTapped:" destination="pqI-cG-vPc" eventType="touchUpInside" id="bMN-pu-fWB"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05Q-gc-Emd">
+                                                    <rect key="frame" x="35" y="0.0" width="339" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YM1-x7-ugw" firstAttribute="top" secondItem="eB6-i7-8dW" secondAttribute="topMargin" id="45q-xx-jxw"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="YM1-x7-ugw" secondAttribute="trailing" id="f50-U7-Nko"/>
+                                        <constraint firstItem="YM1-x7-ugw" firstAttribute="leading" secondItem="eB6-i7-8dW" secondAttribute="leadingMargin" id="ioo-xq-ecp"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="YM1-x7-ugw" secondAttribute="bottom" id="xEX-AQ-MLq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="isCompleteButton" destination="U1G-JD-NUq" id="FHd-XK-8xy"/>
+                                    <outlet property="titleLabel" destination="05Q-gc-Emd" id="XBD-ee-E1Q"/>
                                     <segue destination="2V0-mR-Kc8" kind="presentation" destinationCreationSelector="editToDo:" id="jO2-yL-ccW"/>
                                 </connections>
                             </tableViewCell>

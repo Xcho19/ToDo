@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ToDoTableViewController: UITableViewController {
+class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     
     var toDos = [ToDo]()
     
@@ -34,17 +34,30 @@ class ToDoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath) as? ToDoCell
+        else { fatalError() }
         
         let toDo = toDos[indexPath.row]
-        cell.textLabel?.text = toDo.title
+        cell.titleLabel?.text = toDo.title
+        cell.isCompleteButton.isSelected = toDo.isComplete
+        cell.delegate = self
         
         return cell
     }
     
-    @IBAction func unwindToToDoList(segue: UIStoryboardSegue){
-        guard segue.identifier == "saveUnwind" else { return }
-        let sourceViewController = segue.source as! ToDoDetailTableViewController
+    func checkmarkTapped(sender: ToDoCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var todo = toDos[indexPath.row]
+            todo.isComplete.toggle()
+            toDos[indexPath.row] = todo
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind",
+              let sourceViewController = segue.source as? ToDoDetailTableViewController
+        else { return }
         
         if let todo = sourceViewController.todo {
             if let indexOfExistingToDo = toDos.firstIndex(of: todo) {

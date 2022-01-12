@@ -77,7 +77,7 @@ class ToDoDetailTableViewController: UITableViewController {
         
     }
     
-    func updateSaveButtonState(){
+    func updateSaveButtonState() {
         let shouldEnableSaveButton = titleTextField.text?.isEmpty == false
         saveButton.isEnabled = shouldEnableSaveButton
     }
