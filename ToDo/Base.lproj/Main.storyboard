@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C0U-dh-AZV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C0U-dh-AZV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,7 +59,7 @@
                                 <connections>
                                     <outlet property="isCompleteButton" destination="U1G-JD-NUq" id="FHd-XK-8xy"/>
                                     <outlet property="titleLabel" destination="05Q-gc-Emd" id="XBD-ee-E1Q"/>
-                                    <segue destination="2V0-mR-Kc8" kind="presentation" destinationCreationSelector="editToDo:" id="jO2-yL-ccW"/>
+                                    <segue destination="2V0-mR-Kc8" kind="presentation" id="jO2-yL-ccW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -256,7 +256,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pqI-cG-vPc" kind="relationship" relationship="rootViewController" id="3ev-Wm-cml"/>
+                        <segue destination="pqI-cG-vPc" kind="relationship" relationship="rootViewController" destinationCreationSelector="editToDo:sender:" id="3ev-Wm-cml"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8L-uq-X4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
