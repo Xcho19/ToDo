@@ -74,7 +74,6 @@ class ToDoDetailTableViewController: UITableViewController {
         let notes = notesTextView.text
         
         todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
-        
     }
     
     func updateSaveButtonState() {
